@@ -1,0 +1,50 @@
+.Container {
+  width: 725px;
+  height: 205px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.Progress__column {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.Progress__column:first-child {
+  padding-left: 40px;
+}
+
+.Progress__content {
+  width: 100%;
+}
+
+.Progress__title {
+  width: 100%;
+  font-size: 30px;
+  margin-bottom: 25px;
+}
+
+.Progress__detail {
+  width: 100%;
+  font-size: 20px;
+  opacity: 0.4;
+}
+
+.Progress__info {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.info__icon {
+  min-width: 50px;
+  font-size: 40px;
+  margin: 0px 10px;
+  display: flex;
+  justify-content: center;
+}
