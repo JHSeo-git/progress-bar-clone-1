@@ -1,7 +1,11 @@
 const containerBar = document.querySelector(".Container__Bar");
 const pauseToggleDiv = document.querySelector(".pause-toggle");
+const progressLine = document.querySelector(".Container__Bar-linebox__line");
 const progressPercent = document.querySelector(
   ".Progress__content-text-percent"
+);
+const progressLeftSeconds = document.querySelector(
+  ".Progress__content-text-leftSeconds"
 );
 
 let isRun = true;
@@ -31,8 +35,17 @@ const SetProgressPercent = (progress) => {
   progressPercent.innerText = `${convertNumber}%`;
 };
 
+const SetProgressLeftFiles = (seconds) => {
+  if (isRun) {
+    progressLeftSeconds.innerText = `${seconds} Seconds left`;
+  } else {
+    progressLeftSeconds.innerText = `Paused`;
+  }
+};
+
 const runForTest = () => {
   const id = setInterval(() => {
+    SetProgressLeftFiles("7");
     if (isRun) {
       if (width > 100) {
         clearInterval(id);
@@ -53,10 +66,14 @@ const handleIconClick = (event) => {
     isRun = false;
     parentNode.removeChild(target);
     parentNode.appendChild(reStartIcon());
+    progressLine.classList.remove("lineRun");
+    progressLine.classList.add("linePause");
   } else {
     isRun = true;
     parentNode.removeChild(target);
     parentNode.appendChild(puaseIcon());
+    progressLine.classList.remove("linePause");
+    progressLine.classList.add("lineRun");
   }
 };
 

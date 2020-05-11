@@ -30,11 +30,59 @@
 
 .Container__Bar-linebox__line {
   width: 100%;
-  height: 2px;
-  background-color: #9f9af8;
+  height: 20%;
+  border-top: 3px solid #9f9af8;
   position: absolute;
   left: 0px;
-  bottom: 50px;
+  bottom: 0px;
+  opacity: 1;
+  transition: all 0.2s linear;
+}
+
+@keyframes linePause {
+  0% {
+    opacity: 1;
+    height: 20%;
+  }
+  50% {
+    opacity: 0.5;
+    height: 20%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+  }
+  100% {
+    opacity: 0.3;
+    height: 10%;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}
+
+@keyframes lineRun {
+  0% {
+    opacity: 0.3;
+    height: 10%;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  50% {
+    opacity: 0.5;
+    height: 20%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+  }
+  100% {
+    opacity: 1;
+    height: 20%;
+  }
+}
+
+.linePause {
+  animation: linePause 0.2s ease-in-out forwards;
+}
+
+.lineRun {
+  animation: lineRun 0.2s ease-in-out forwards;
 }
 
 .Progress__column {
