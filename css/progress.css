@@ -8,6 +8,45 @@
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   position: relative;
   overflow: hidden;
+  transition: all 0.5s linear;
+}
+
+@keyframes expand {
+  0% {
+    height: 205px;
+  }
+  20% {
+    height: 450px;
+    width: 755px;
+  }
+  100% {
+    height: 420px;
+    width: 725px;
+  }
+}
+
+@keyframes compress {
+  0% {
+    height: 420px;
+  }
+  20% {
+    height: 175px;
+    width: 695px;
+  }
+  100% {
+    height: 205px;
+    width: 725px;
+  }
+}
+
+.expand {
+  height: 420px;
+  animation: expand 1s ease-in-out forwards;
+}
+
+.compress {
+  height: 205px;
+  animation: compress 1s ease-in-out forwards;
 }
 
 .Container__Bar {
@@ -20,6 +59,16 @@
   display: flex;
   justify-content: center;
   z-index: 1;
+}
+
+.appear {
+  opacity: 1;
+  transition: opacity 0.5s linear;
+}
+
+.disappear {
+  opacity: 0;
+  transition: opacity 0.5s linear;
 }
 
 .Container__Bar-linebox {
@@ -78,7 +127,7 @@
 }
 
 .linePause {
-  animation: linePause 0.2s ease-in-out forwards;
+  animation: linePause 0.4s ease-in-out forwards;
 }
 
 .lineRun {
@@ -125,9 +174,9 @@
   margin: 0px 10px;
   display: flex;
   justify-content: center;
-  transition: all 0.2s linear;
   z-index: 2;
   opacity: 0.5;
+  transition: all 0.2s linear;
 }
 
 .info__icon:hover {
