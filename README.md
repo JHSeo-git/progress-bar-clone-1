@@ -17,7 +17,8 @@
 - [x] for test js function
 - [x] pause restart function
 - [x] animate pause progress line
+- [x] expand button function
+- [x] fixed js event handler
 - [ ] multiple file progress
 - [ ] cancle button function
-- [ ] expand button function
 - [ ] detail button function
